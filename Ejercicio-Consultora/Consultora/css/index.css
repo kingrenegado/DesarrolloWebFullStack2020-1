@@ -1,5 +1,7 @@
 body {
     background: linear-gradient(top, gray, white);
+    padding: 0;
+    margin: 0;
 }
 
 #header {
@@ -68,23 +70,29 @@ h1 {
 }
 
 #nosotros-img {
-    width: 40%;
+    width: 600px;
     float: left;
 }
 
 #nosotros-texto {
-    width: 40%;
+    width: 500px;
     float: left;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: justify;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 10px;
+    padding-right: 10px;
     margin-bottom: 0;
 }
 
 .nosotros {
     width: 100%;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
+}
+
+#contiene-todo {
+    width: 100%;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
 }
 
 #img-nst {
@@ -117,15 +125,16 @@ footer {
     text-align: center;
     margin-top: 0;
 }
+/* Estilos de la tabla */
 
-#tabla-precios{
+#tabla-precios {
     margin: 100px auto;
     text-align: center;
     width: 900px;
+    background-color: black;
 }
 
-
-#tabla-precios .plan{
+#tabla-precios .plan {
     font: 14px 'Lucida Sans', 'trebuchet MS', Arial, Helvetica;
     text-shadow: 0 1px rgb(255, 255, 255, 0);
     background: #ffffff;
@@ -138,31 +147,29 @@ footer {
     padding-bottom: 20px;
 }
 
-#tabla-precios #mas-popular{
-    z-index:2;
+#tabla-precios #mas-popular {
+    z-index: 2;
     top: -15px;
-    border-width: 20px;
+    border-width: 3px;
     padding: 30px 20px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    -moz-box-shadow: 20px 0 10px -10 rgba(0,0,0,.15), 20px 0 10px -10px rgba(0,0,0,.15);
-
-
+    -moz-box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15), 20px 0 10px -10px rgba(0, 0, 0, .15), 20px 0 10px -10px rgba(0, 0, 0, .15)
 }
 
-#precios{
+#precios {
     background-color: black;
 }
 
-#tabla-precios h3{
+#tabla-precios h3 {
     font-size: 20px;
     font-weight: normal;
     padding: 20px;
     margin: -20px -20px 50px -20px;
-    background-color:#eee;
-    background-image: -webkit-linear-gradient(linear,left top, left bottom, from(#fff), to(#eee));
-    background-image: -o-linear-gradient(linear,left top, left bottom, from(#fff), to(#eee));
-    background-image: -ms-linear-gradient(linear,left top, left bottom, from(#fff), to(#eee));
-    background-image: linear-gradient(linear,left top, left bottom, from(#fff), to(#eee));
+    background-color: #eee;
+    background-image: -webkit-linear-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+    background-image: -o-linear-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+    background-image: -ms-linear-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+    background-image: linear-gradient(linear, left top, left bottom, from(#fff), to(#eee));
 }
