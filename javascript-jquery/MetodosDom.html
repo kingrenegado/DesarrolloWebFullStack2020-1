@@ -6,12 +6,85 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style>
+        li{
+            cursor: pointer;
+        }
+
+        li:hover{
+            background-color: red;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <h1>Metodo dom</h1>
     </div>
+
+    <h2 class="compras">Lista de Compras pendientes</h2>
+ 
+    <ul id="lista">
+        
+    </ul>
+
+    <h2 class="compras">Elementos comprados</h2>
+
+    <ul id="listaComprados">
+        
+    </ul>
+
+
+    <script>
+        var listaCompras = ["Huevos","Leche","Carne","Queso","Fruta"];
+        var ul = document.getElementById("lista");
+
+        for(var i = 0; i < listaCompras.length; i++){
+            ul.innerHTML = ul.innerHTML + "<li onclick = 'comprados(this)' >" + listaCompras[i] + "</li>";
+        }
+
+        function comprados(li){
+            var valor = li.innerHTML;
+            var ul = document.getElementById("listaComprados");
+
+            ul.appendChild(li);
+        }
+
+        var elementosLista = document.getElementsByTagName("li");
+            for(var j = 0; j < elementosLista.length ; j++){
+                elementosLista[j].style.textTransform = "uppercase";
+        }
+
+        // function saluda(){
+        //     alert("Hola");
+        // }
+        // function saludaPersona(nombre){
+        //     alert("hola " + nombre);
+        // }
+
+        // function suma(a,b){
+        //    var c = a+b;
+        //    return c;
+        // }
+
+        // saluda();
+        // saludaPersona("Enrique");
+        // var sumadato = suma(89,198);
+
+        // alert("C es igual a: " + sumadato);
+    </script>
+
+
+<script>
+
+    function imprimirValor(objetoDom){
+        var valor = objetoDom.innerHTML;
+        console.log("Valor: " + valor);
+    }
+
+</script>
 </body>
 
 </html>
