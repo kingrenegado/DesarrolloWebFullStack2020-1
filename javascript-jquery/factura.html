@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
+    <title>Factura</title>
+
+</head>
+<style>
+    .text-right{
+        text-align: right;
+    }
+</style>
+<body>
+    <table>
+        <thead>
+            <tr id="filaTitulo">
+                <th>Clave</th>
+                <th>Precio</th>
+                <th>Descripción</th>
+                <th>Unidades</th>
+                <th>Importe</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" name="" id="" class="clave"></td>
+                <td><input type="number" name="" id="" class="precio" min="0"></td>
+                <td><input type="text" name="" id="" class="descripcion"></td>
+                <td><input type="number" name="" id="" class="unidades" min="1" step="1"></td>
+                <td><input type="number" name="" id="" class="importe" readonly></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="" id="" class="clave"></td>
+                <td><input type="number" name="" id="" class="precio" min="0"></td>
+                <td><input type="text" name="" id="" class="descripcion"></td>
+                <td><input type="number" name="" id="" class="unidades" min="1" step="1"></td>
+                <td><input type="number" name="" id="" class="importe" readonly></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="" id="" class="clave"></td>
+                <td><input type="number" name="" id="" class="precio" min="0"></td>
+                <td><input type="text" name="" id="" class="descripcion"></td>
+                <td><input type="number" name="" id="" class="unidades" min="1" step="1"></td>
+                <td><input type="number" name="" id="" class="importe" readonly></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr id="filaSubtotal">
+                <td class="text-right" colspan="3">Subtotal: $</td>
+                <td  class="text-right" id="subtotal">0.00</td>
+            </tr>
+            <tr>
+                <td class="text-right" colspan="3">IVA: $</td>
+                <td class="text-right" id="iva">0.00</td>
+            </tr>
+            <tr>
+                <td class="text-right" colspan="3">Total: $</td>
+                <td class="text-right" id="total">0.00</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        $(".precio, .unidades").on("change", function(e){
+            var tr = $(this).closest("tr");
+            calcularImporte(tr);
+        });
+
+        function calcularImporte(tr){
+            var precio = Number($(tr).find(".precio").val());
+            var unidades = Number($(tr).find(".unidades").val());
+
+            console.log('precio ' +precio);
+            console.log('unidades '+unidades);
+
+            var importe = precio * unidades;
+            console.log(importe);
+            $(tr).find(".importe").val(importe);
+        }
+
+        $(".importe").on("change",function(e){
+            var tr = $(this).closest(tr);
+            calcularTotal(tr);
+        })
+
+        function calcularTotal(tr){
+
+            var subtotal = 0;
+            $(".importe").each(
+                function(){
+                 subtotal += Number($(this).val());
+                 importe_total = importe_total + val('.importe');
+                console.log(importe_total);
+                }
+            );
+
+            $("#subtotal").text(subtotal);
+        }
+
+        function calcularIva(){
+            var iva = 0.16;
+            var subtotal = $(".subtotal").val();
+            var operacion= subtotal * iva;
+            
+
+            $(tr).find(".iva").val(operacion);
+        }
+
+
+        function total(){
+            calcularIva();
+            var resultado = subtotal + operacion;
+
+            $(tr).find(".total").val(resultado);
+        }
+    </script>
+</body>
+</html>
