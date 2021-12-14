@@ -1,0 +1,29 @@
+<div class="container">
+<div class="row">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre </th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Fecha</th>
+      <th>Editar</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each services}}
+    <tr>
+      <th scope="row">{{nombre}}</th>
+      <td>{{descripcion}}</td>
+      <td>{{precio}}</td>
+      <td>{{date}}</td>
+      <td><a href="/services/editServices/{{_id}}" class="btn btn-warning"> <i class="fas fa-edit"></i></a> </td>
+      <td><a href="/services/deleteServices/{{_id}}" class="btn btn-danger"> <i class="fas fa-trash"></i></a></td>
+      <td></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</div>
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+    <table class="table bordered-table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Fecha</th>
+      <th class="col">Editar</th>
+      <th class="col">Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each products}}
+    <tr>
+      <td>{{nombre}}</td>
+      <td>{{descripcion}}</td>
+      <td>{{cantidad}}</td>
+      <td>{{date}}</td>
+      <td><a href="/products/edit/{{_id}}" class="btn btn-warning"> <i class="fas fa-edit"></i></td></a>
+      <td><a href="/products/delete/{{_id}}" class="btn btn-danger"><i class="fas fa-trash"></i></td></a> 
+    </tr>
+
+    {{else}}
+    <div class="jumbotron">
+  <h1 class="display-4">No hay productos en la bd!</h1>
+  <p class="lead">Añade nuevos productos</p>
+  <hr class="my-4">
+  <a class="btn btn-primary btn-lg" href="/products/add" role="button">Añade un nuevo producto</a>
+</div>
+
+    {{/each}}
+  </tbody>
+</table>
+</div>
+</div>
+</div>
